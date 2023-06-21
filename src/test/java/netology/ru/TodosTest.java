@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class TodosTest {
     @Test
-    public void checkingTheWorkOfAllClasses() {  //+
+    public void checkingTheWorkOfAllClasses() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
@@ -30,7 +30,7 @@ public class TodosTest {
     }
 
     @Test
-    public void testMatchesWhenSomeNasksFound() {  //+
+    public void testMatchesWhenSomeNasksFound() {
         SimpleTask simpleTask = new SimpleTask(5, "Купить Хлеб");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
@@ -55,7 +55,7 @@ public class TodosTest {
     }
 
     @Test
-    public void writingANewValue() {  //+
+    public void writingANewValue() {
         SimpleTask simpleTask = new SimpleTask(5, "позвонить бабушке");
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
