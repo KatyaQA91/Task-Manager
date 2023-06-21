@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TaskTest {
     @Test
-    public void testSimpleTaskMatchesWhenMatches() {
+    public void testSimpleTaskMatchesWhenMatches() {  //+
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
 
@@ -18,7 +18,7 @@ class TaskTest {
     }
 
     @Test
-    public void testSimpleTaskMatchesWhenNotMatches() {
+    public void testSimpleTaskMatchesWhenNotMatches() {  //+
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
 
@@ -96,7 +96,7 @@ class TaskTest {
     }
 
     @Test
-    public void checkingTheNegativeDisplayOfTheGraphProject() {
+    public void checkingTheNegativeDisplayOfTheGraphProject() {  //+
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -110,7 +110,7 @@ class TaskTest {
     }
 
     @Test
-    public void testEpicMatchesWhenNotMatches() {
+    public void testEpicMatchesWhenNotMatches() {  //+
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
         boolean actual = epic.matches("Сахар");
@@ -120,10 +120,36 @@ class TaskTest {
     }
 
     @Test
-    public void testEpicMatchesWhenMatches() {
+    public void testEpicMatchesWhenMatches() {  //+
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
         boolean actual = epic.matches("Хлеб");
+        boolean expected = true;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSearchForTasksByIdIsNegative() {
+
+        SimpleTask simpleTask1 = new SimpleTask(5, "Позвонить родителям");
+        SimpleTask simpleTask2 = new SimpleTask(7, "Позвонить родителям");
+
+
+        boolean actual = simpleTask1.hashCode() == simpleTask2.hashCode();
+        boolean expected = false;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSearchForTasksByIdIsPositive() {
+
+        SimpleTask simpleTask1 = new SimpleTask(5, "Позвонить родителям");
+        SimpleTask simpleTask2 = new SimpleTask(5, "Позвонить родителям");
+
+
+        boolean actual = simpleTask1.hashCode() == simpleTask2.hashCode();
         boolean expected = true;
 
         Assertions.assertEquals(expected, actual);
